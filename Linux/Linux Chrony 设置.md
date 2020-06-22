@@ -1,10 +1,10 @@
 # Linux chrony
 ## chrony是一个开源的自由软件，ep.CentOS 7 or Rehl 7的系统里，已经是默认服务了。默认配置文件在/etc/chrony.conf中。它能够保持系统时间与时间服务器NTP的同步，并且让时间始终保持同步。
-========
+***
 chrony有两个核心组件，分别是：
 - chronyd 守护进程，主要用于调整内核运行中运行的系统时间与时间服务器的同步。它确定计算机增减时间的比率。对此进行调整和补偿。
 - chronyc 提供用户界面，用于监控性能并进行多样化配置。
-=======
+***
 通常系统已经默认安装。若为安装，可通过yum进行安装。
 ```
 yum install chrony
@@ -21,7 +21,7 @@ firewall-cmd —add-service=ntp —permanent
 firewall-cmd —reload
 #因为NTP使用123/UDP端口协议，所以运行NTP服务即可
 ```
-==========
+***
 系统默认配置文件的一些说明：
 ```
 cat /etc/chrony.conf
@@ -71,7 +71,7 @@ logdir /var/log/chrony
 # Select which information is logged.
 #log measurements statistics tracking
 ```
-=============
+***
 设置时区，查看系统当前时区
 ```
 timedatectl
@@ -111,7 +111,7 @@ chronyc -a makestep
 200 OK1
 
 ```
-========
+***
 在服务集群之间的系统时间同步
 因为在生产环境中，网络基本为内网结构。一般若要同步时间可到服务端同步时间即可。   
 对服务端
@@ -132,7 +132,7 @@ server 10.28.204.66 iburst
 server 10.28.204.66 iburst
 
 ```
-=========
+***
 其它给予chrony常用命令
 ```
 $ chronyc sources -v
